@@ -32,9 +32,12 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
+                 <configuration>
                     <image>
                         <name>docker.io/library/spring-boot-build-image-cache-repro:0.0.1-SNAPSHOT</name>
+                        <env>
+                            <BP_LOG_LEVEL>DEBUG</BP_LOG_LEVEL>
+                        </env>
                         <buildWorkspace>
                             <bind>
                                 <source>${pack.cache.root}/work</source>
